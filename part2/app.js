@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Session management
 app.use(session({
   secret: process.env.SESSION_SECRET || 'defaultsecret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
