@@ -31,7 +31,20 @@
   <script>
     const { createApp, ref } = Vue;
     createApp({
-      setup() {}
+      setup() {
+        const email = ref('');
+        const password = ref('');
+        const error = ref('');
+
+        const login = () => {
+          // Here you would typically handle the login logic, e.g., API call
+          console.log('Logging in with:', email.value, password.value);
+          // Redirect to the appropriate dashboard
+          window.location.href = 'owner-dashboard.html'; // or walker-dashboard.html based on role
+        };
+
+        return { email, password, login };
+      }
       }
     }).mount('#app');
   </script>
