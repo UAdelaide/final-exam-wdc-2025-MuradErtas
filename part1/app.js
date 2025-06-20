@@ -135,7 +135,7 @@ let db;
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 2, 1, 5, 'Great walk!'),
         (2, 4, 3, 1, 'Bro cant walk lmao'),
-        (3, 2, 5, 4, 'Good job!'),
+        (3, 2, 5, 4, 'Good job!');
       `);
     }
   } catch (err) {
