@@ -397,7 +397,11 @@ Sed diam justo, laoreet sit amet dui quis, iaculis lacinia lacus. Morbi suscipit
                         this.dogImage = data.message;
                     });
 
-                fetch('')
+                fetch('/api/dogs')
+                    .then(res => res.json())
+                    .then(data => {
+                        this.dogs = data;
+                    });
             }
         }).mount('#app');
     </script>
