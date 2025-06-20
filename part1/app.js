@@ -113,6 +113,9 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 ((SELECT dog_id FROM Dogs WHERE name = 'Lucy'), '2025-09-10 21:30:00', 20, 'Windy Point', 'completed'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Levi'), '2025-09-11 12:30:00', 300, 'Africa', 'cancelled');
     `);
+  } catch (err) {
+    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+  }
 
 // Route to return users as JSON
 app.get('/', async (req, res) => {
@@ -126,4 +129,4 @@ app.get('/', async (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-module.exports = app;}
+module.exports = app;
