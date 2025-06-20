@@ -31,7 +31,6 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'testdb',
       multipleStatements: true
     });
 
