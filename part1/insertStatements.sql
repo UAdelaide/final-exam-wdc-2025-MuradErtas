@@ -1,7 +1,7 @@
-INSERT INTO Users (username, email, password_hash, role) VALUES
-('alice123','alice@example.com','hashed123','owner'),
-('bobwalker','bob@example.com','hashed456','walker'),
-('carol123','carol@example.com''hashed789','owner'),
+INSERT INTO Users (uusername, email, password_hash, role) VALUES
+(1,'alice123','alice@example.com','hashed123','owner'),
+(2,'bobwalker','bob@example.com','hashed456','walker'),
+(3,'carol123','carol@example.com''hashed789','owner'),
 ('frankwalker','frank@example.com','hashed100','walker'),
 ('eve123','eve@example.com','hashed101','owner');
 
