@@ -39,9 +39,11 @@
 
         // Function to handle login
         async function login() {
+          // Reset error message
           error.value = '';
           try {
             const res = await fetch('/api/users/login', {
+              // s
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
