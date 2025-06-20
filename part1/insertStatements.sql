@@ -4,3 +4,5 @@ INSERT INTO Users (username, email, passwword_hash, role) VALUES
 ('carol123','carol@example.com''hashed789','owner'),
 ('frankwalker','frank@example.com','hashed100','walker'),
 ('eve123','eve@example.com','hashed101','owner')
+;
+
