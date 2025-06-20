@@ -5,9 +5,9 @@ const db = require('../db');
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
     try {
-        const [rows] = await db.query('
-            SELECT name FROM Dogs
-            ');
+        const [rows] = await db.query(`
+            SELECT Dogs.name FROM Dogs
+            `);
         res.json(rows);
     } catch (err) {
         console.error('Error fetching dogs:', err);
@@ -18,9 +18,9 @@ router.get('/dogs', async (req, res) => {
 // GET /api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
     try {
-        const [rows] = await db.query('
+        const [rows] = await db.query(`
 
-            ');
+            `);
         res.json(rows);
     } catch (err) {
         console.error('Error fetching open walk requests:', err);
