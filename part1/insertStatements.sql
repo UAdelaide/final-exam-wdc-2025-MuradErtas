@@ -1,1 +1,1 @@
-INSERT INTO 
+INSERT INTO Users (username, email, passwword_hash, role)
