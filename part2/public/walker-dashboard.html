@@ -100,9 +100,7 @@
         // Fucntion to load user ID
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/users/me', {
-              method: 'GET',
-              headers: { 'Content-Type': 'application/json' }
+            const res = await fetch('/api/users/me');
             });
           }
         }
