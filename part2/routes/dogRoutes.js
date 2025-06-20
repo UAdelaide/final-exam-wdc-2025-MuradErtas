@@ -5,8 +5,8 @@ const db = require('../models/db');
 // GET /dogs
 router.get('/', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT dog_id, name, size, owner_id FROM Dogs');
-        res.json(rows);
+        const [dogs] = await db.query('SELECT dog_id, name, size, owner_id FROM Dogs');
+        res.json(dogs);
     } catch (err) {
         console.error('Error fetching dogs:', err);
         res.status(500).json({ error: 'Internal Server Error' });
