@@ -11,3 +11,4 @@ INSERT INTO Dogs (owner_id, name, size) VALUES
 (2, 'Bella', 'small'),
 (3, 'Charlie', 'medium'),
 (4, 'Lucy', 'small')
+(5, 'Levi', 'large')
