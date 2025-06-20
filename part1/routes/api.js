@@ -21,7 +21,7 @@ router.get('/dogs', async (req, res) => {
 router.get('/walkrequests/open', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            
+            SELECT 
             `);
         res.json(rows);
     } catch (err) {
