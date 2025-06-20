@@ -109,7 +109,7 @@
             // Parses the response as JSON
             const dogsData = await dogsRes.json();
 
-            // Fetches a random photo for each dog
+            // Fetches a random photo for each dog, gets all photos in parallel
             const dogsPhotos = dogsData.map(() =>
               fetch('https://dog.ceo/api/breeds/image/random')
                 .then(res => res.json())
