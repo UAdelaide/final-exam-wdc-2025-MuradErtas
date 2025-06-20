@@ -132,8 +132,8 @@ let db;
       `);
 
       await db.execute(`
-        INSERT INTO WalkRatings (dog_id, request_id, walker_id, owner_id, rating, comments) VALUES
-        
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+        ()
       `);
     }
   } catch (err) {
