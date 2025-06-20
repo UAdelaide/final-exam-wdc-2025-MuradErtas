@@ -30,9 +30,29 @@
       <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
     </form>
 
-    <div class=""
-
-
+    <div class="mt-5">
+      <h2 class="mb-3">Available Dogs</h2>
+      <!-- Table to display the list of dogs -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Dog Name</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Age</th>
+            <th scope="col">Photo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through the dogs array and display each dog's information -->
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.breed }}</td>
+            <td>{{ dog.age }} years</td>
+            <td><img :src="dog.photo" alt="Dog Photo" class="img-thumbnail" style="width: 100px;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script>
