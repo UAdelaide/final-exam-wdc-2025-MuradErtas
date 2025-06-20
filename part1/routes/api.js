@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../db'); // Assuming db.js exports the database connection
 
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
