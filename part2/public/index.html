@@ -98,8 +98,13 @@
           }
         }
 
+        // Load dogs when the component is mounted
+        onMounted(() => {
+          LoadDogs();
+        });
+
         // Return information to be used in the template
-        return { username, password, error, login };
+        return { username, password, error, login, dogs };
       }
     }).mount('#app');
   </script>
