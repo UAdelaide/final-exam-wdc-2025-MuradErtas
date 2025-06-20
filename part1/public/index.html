@@ -139,8 +139,12 @@ Nullam non laoreet libero. Nulla facilisi. Proin molestie erat sapien, et finibu
 
     <div>
         <h1>Some registered doggos for you!</h1>
-        <ul>    
-
+        <ul>
+            <li v-for="dog in dogs" :key="dog.id">
+                <h2>{{ dog.name }}</h2>
+                <p>Breed: {{ dog.breed }}</p>
+                <p>Age: {{ dog.age }} years</p>
+            </li>
         </ul>
     </div>
 
