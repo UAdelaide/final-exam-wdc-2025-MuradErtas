@@ -102,11 +102,14 @@
         // Fetch list of dogs and populate the table, with photos!
         async function LoadDogs() {
           try {
+            // Fetches the list of dogs from the backend API
             const dogsRes = await fetch('/api/dogs');
             if (!dogsRes.ok) throw new Error('Failed to load dogs');
 
+            // Parses the response as JSON
             const dogsData = await dogsRes.json();
 
+            // Fetches a random photo for each dog
             const dogsPhotos = dogsData.map(() =>
               fetch('https://dog.ceo/api/breeds/image/random')
                 .then(res => res.json())
