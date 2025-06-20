@@ -99,7 +99,7 @@ let db;
     `);
 
     await db.execute(`
-      INSERT INTO Users (user_id, username, email, password_hash, role) VALUES
+      INSERT INTO IF NOT EXISTS Users (user_id, username, email, password_hash, role) VALUES
       (1, 'alice123', 'alice@example.com', 'hashed123', 'owner'),
       (2, 'bobwalker', 'bob@example.com', 'hashed456', 'walker'),
       (3, 'carol123', 'carol@example.com', 'hashed789', 'owner'),
@@ -108,7 +108,7 @@ let db;
     `);
 
     await db.execute(`
-      INSERT INTO Dogs (owner_id, name, size) VALUES
+      INSERT INTO IF NOT EXISTS Dogs (owner_id, name, size) VALUES
       ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
       ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
       ((SELECT user_id FROM Users WHERE username = 'eve123'), 'Charlie', 'medium'),
