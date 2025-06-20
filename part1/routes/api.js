@@ -24,4 +24,20 @@ router.get('/walkrequests/open', async (req, res) => {
     }
 });
 
+// GET /api/walkers/summary
+router.get('/walkers/summary', async (req, res) => {
+    try {
+        const [rows] = await req.app.locals.db.execute(`
+            SELECT walker_id, COUNT(*) AS total_walks
+            FROM WalkRequests
+            WHERE status = "completed"
+            GROUP BY walker_id
+        `);
+        res.json(rows);
+    } catch (err) {
+        console.error('Error fetching walker summary:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 module.exports = router;
