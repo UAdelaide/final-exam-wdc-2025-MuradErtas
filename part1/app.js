@@ -123,7 +123,7 @@ let db;
       `);
 
       await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+        INSERT INTO WalkRequests (request_id, dog_id, requested_time, duration_minutes, location, status) VALUES
         ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Charlie'), '2025-07-10 01:30:00', 60, 'Milner Road', 'open'),
@@ -133,8 +133,8 @@ let db;
 
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        (6, 2, 1, 5, 'Great walk!'),
-        (, 4, 3, 1, 'Bro cant walk lmao'),
+        (8, 2, 1, 5, 'Great walk!'),
+        (9, 4, 3, 1, 'Bro cant walk lmao'),
         (10, 2, 5, 4, 'Good job!');
       `);
     }
