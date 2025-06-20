@@ -32,13 +32,14 @@
   </div>
 
   <script>
-    const { createApp, ref } = Vue;
+    const { createApp, ref, onMounted } = Vue;
     createApp({
       setup() {
         // Variables to hold user input and error messages
         const username = ref('');
         const password = ref('');
         const error = ref('');
+        const dogs = ref([]);
 
         // Function to handle login
         async function login() {
