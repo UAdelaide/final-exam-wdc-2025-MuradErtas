@@ -54,7 +54,7 @@
             const result = await res.json();
             // Check if the response is ok, if not throw an error
             if (!res.ok) throw new Error(result.error || 'Login failed');
-            // Handle successful login, e.g., redirect to dashboard
+            // Handle successful login, sending user to the appropriate dashboard based on role
             if (result.user && result.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (result.user && result.user.role === 'walker') {
@@ -62,6 +62,7 @@
             } else {
               error.value = 'Invalid user role';
             }
+            
           } catch (err) {
             error.value = err.message || 'An error occurred';
             console.error('Login error:', error.value);
