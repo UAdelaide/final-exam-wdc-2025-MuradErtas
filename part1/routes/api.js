@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-
+const db = require('../db');
 
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
     try {
-        const [rows] = await req.app.locals.db.execute('SELECT * FROM Dogs');
+        const [rows] = await db.execute('SELECT * FROM Dogs');
         res.json(rows);
     } catch (err) {
         console.error('Error fetching dogs:', err);
