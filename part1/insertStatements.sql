@@ -6,3 +6,9 @@ INSERT INTO Users (username, email, passwword_hash, role) VALUES
 ('eve123','eve@example.com','hashed101','owner')
 ;
 
+INSERT INTO Dogs (owner_id, name, size) VALUES
+(1, 'Max', 'medium'),
+(1, 'Max', 'large'),
+(2, 'Bella', 'small'),
+(3, 'Charlie', 'medium'),
+(4, 'Lucy', 'small')
