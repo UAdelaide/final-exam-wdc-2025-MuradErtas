@@ -28,10 +28,8 @@ router.get('/walkrequests/open', async (req, res) => {
 router.get('/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
-            SELECT walker_id, COUNT(*) AS total_walks
-            FROM WalkRequests
-            WHERE status = "completed"
-            GROUP BY walker_id
+
+
         `);
         res.json(rows);
     } catch (err) {
