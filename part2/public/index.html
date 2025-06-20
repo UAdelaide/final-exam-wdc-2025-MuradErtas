@@ -85,6 +85,16 @@
               fetch('https://dog.ceo/api/breeds/image/random')
                 .then(res => res.json())
             );
+
+            const photos = await Promise.all(dogsPhotos);
+
+            dogs.value = dogsData.map((dog, index) => ({
+              ...dog,
+              photo: photos[index].message
+            }));
+          } catch (err) {
+            error.value = err.message || 'Error loading dogs';
+            console.error('Load dogs error:', error.value);
           }
         }
 
