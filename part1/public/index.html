@@ -19,7 +19,15 @@
     </div>
 
     <script>
-        Vue.crea
+        Vue.createApp({
+            data() {
+                return {
+                    dogName: 'Buddy',
+                    dogDescription: 'Hes a doggo',
+                    dogImage: '/images/dog.jpg'
+                }
+            }
+        }).mount('#app');
     </script>
 
 </body>
