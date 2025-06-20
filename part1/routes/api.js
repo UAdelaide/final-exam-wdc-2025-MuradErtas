@@ -5,7 +5,7 @@ const db = require('../db');
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
     try {
-        const [rows] = await db.execute('SELECT * FROM Dogs');
+        const [rows] = await db.query('SELECT * FROM Dogs');
         res.json(rows);
     } catch (err) {
         console.error('Error fetching dogs:', err);
@@ -16,7 +16,7 @@ router.get('/dogs', async (req, res) => {
 // GET /api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
     try {
-        const [rows] = await req.app.locals.db.execute('SELECT * FROM WalkRequests WHERE status = "open"');
+        const [rows] = await db.query('SELECT * FROM WalkRequests WHERE status = "open"');
         res.json(rows);
     } catch (err) {
         console.error('Error fetching open walk requests:', err);
@@ -27,7 +27,7 @@ router.get('/walkrequests/open', async (req, res) => {
 // GET /api/walkers/summary
 router.get('/walkers/summary', async (req, res) => {
     try {
-        const [rows] = await req.app.locals.db.execute(`
+        const [rows] = await db.query(`
             SELECT walker_id, COUNT(*) AS total_walks
             FROM WalkRequests
             WHERE status = "completed"
