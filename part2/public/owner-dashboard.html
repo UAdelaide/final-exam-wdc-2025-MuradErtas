@@ -99,8 +99,10 @@
           }
         }
 
+        // Load dogs for the dropdown
         async function loadDogs() {
           try {
+            // Fetches the list of dogs from the backend API
             const res = await fetch('/api/users/dogs');
             if (!res.ok) throw new Error('Failed to load dogs');
             dogs.value = await res.json();
