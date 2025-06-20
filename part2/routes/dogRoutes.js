@@ -1,4 +1,6 @@
-const express
+const express = require('express');
+const router = express.Router();
+const db = require('../models/db');
 
 // GET /dogs
 router.get('/', async (req, res) => {
@@ -14,3 +16,5 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+module.exports = router;
