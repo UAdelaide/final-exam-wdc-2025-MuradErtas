@@ -14,7 +14,7 @@
   <div id="app" class="container py-5">
     <h1 class="text-primary">Welcome to the Dog Walking Service!</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
-    <h2 class="mb-4">Dog Walking Login</h1>
+    <h2 class="mb-4">Dog Walking Login</h2>
     <form @submit.prevent="login" style="max-width: 400px;">
       <div class="mb-3">
         <label class="form-label">Username</label>
@@ -44,7 +44,7 @@
               headers: {
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify({ email: email.value, password: password.value })
+              body: JSON.stringify({ username: username.value, password: password.value })
             });
             const result = await res.json();
             if (!res.ok) throw new Error(result.message || 'Login failed');
@@ -59,7 +59,7 @@
             console.error('Login error:', error.value);
           }
         }
-        return { email, password, error, login };
+        return { username, password, error, login };
       }
     }).mount('#app');
   </script>
