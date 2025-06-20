@@ -109,6 +109,7 @@
 
         onMounted(() => {
           loadWalkRequests();
+          getCurrentUser();
         });
 
         return {
@@ -117,7 +118,6 @@
           error,
           applyToWalk,
           logout,
-          getCurrentUser
         };
       }
     }).mount('#app');
