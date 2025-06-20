@@ -100,7 +100,10 @@
         // Fucntion to load user ID
         async function getCurrentUser() {
           try {
-            const res = await fetch('/api/users/current');
+            const res = await fetch('/api/users/me', {
+              method: 'GET',
+              headers: { 'Content-Type': 'application/json' }
+            });
             if (!res.ok) throw new Error('Failed to load user data');
             const userData = await res.json();
             return userData.id;
