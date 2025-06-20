@@ -16,7 +16,9 @@ router.get('/dogs', async (req, res) => {
 // GET /api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM WalkRequests WHERE status = "open"');
+        const [rows] = await db.query('
+
+            ');
         res.json(rows);
     } catch (err) {
         console.error('Error fetching open walk requests:', err);
