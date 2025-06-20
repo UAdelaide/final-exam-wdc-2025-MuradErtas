@@ -8,7 +8,12 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
+
+// Session management
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'defaultsecret',
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
