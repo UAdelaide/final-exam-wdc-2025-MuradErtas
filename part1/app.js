@@ -120,10 +120,10 @@ app.get('/', async (req, res) => {
     const [users] = await db.execute('SELECT * FROM users');
     res.json(users);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-module.exports = app;
+module.exports = app;}
