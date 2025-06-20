@@ -10,6 +10,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// Set up route for api
 app.use('/api', require('./routes/api'));
 
 let db;
