@@ -51,7 +51,7 @@
             // Handle successful login, e.g., redirect to dashboard
             if (result.user && result.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
-            } else if (result.user && result.role === 'walker') {
+            } else if (result.user && result.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
             }
           } catch (err) {
