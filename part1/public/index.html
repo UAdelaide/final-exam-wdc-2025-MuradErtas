@@ -386,7 +386,7 @@ Sed diam justo, laoreet sit amet dui quis, iaculis lacinia lacus. Morbi suscipit
         Vue.createApp({
             data() {
                 return {
-                    dogImage: ''
+                    dogImage: '',
                     dogs: []
                 };
             },
@@ -396,6 +396,8 @@ Sed diam justo, laoreet sit amet dui quis, iaculis lacinia lacus. Morbi suscipit
                     .then(data => {
                         this.dogImage = data.message;
                     });
+
+                fetch('')
             }
         }).mount('#app');
     </script>
