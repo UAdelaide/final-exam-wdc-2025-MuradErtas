@@ -61,7 +61,7 @@
             console.error('Login error:', error.value);
           }
         }
-        return { email, password, login };
+        return { email, password, error, login };
       }
     }
     }).mount('#app');
