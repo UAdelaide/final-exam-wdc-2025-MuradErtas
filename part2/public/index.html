@@ -48,10 +48,11 @@
               headers: {
                 'Content-Type': 'application/json'
               },
-              //
+              // Sending username and password in JSON format
               body: JSON.stringify({ username: username.value, password: password.value })
             });
             const result = await res.json();
+            // Check if the response is ok, if not throw an error
             if (!res.ok) throw new Error(result.error || 'Login failed');
             // Handle successful login, e.g., redirect to dashboard
             if (result.user && result.user.role === 'owner') {
