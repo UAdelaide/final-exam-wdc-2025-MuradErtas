@@ -401,7 +401,6 @@ Sed diam justo, laoreet sit amet dui quis, iaculis lacinia lacus. Morbi suscipit
                 fetch('/api/dogs')
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         this.dogs = data;
                     });
             }
