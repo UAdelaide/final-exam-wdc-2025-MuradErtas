@@ -15,10 +15,10 @@
     <h1 class="text-primary">Welcome to the Dog Walking Service!</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <h1 class="mb-4">Dog Walking Login</h1>
-    <form @submit.prevent="login" style="max-width: 400px;">
+    <form @submit.prevent="login">
       <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="username" class="form-control" id="email" placeholder="Enter username" required>
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -41,7 +41,7 @@
         async function login() {
           error.value = '';
           try {
-            const res = await fetch('api/users/login', {
+            const res = await fetch('api/users/login' {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
