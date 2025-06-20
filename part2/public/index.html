@@ -115,10 +115,10 @@
                 .then(res => res.json())
             );
 
-            // Wait for all photo fetches to complete
+            // Wait for all photo fetches to complete, this returns an array of photo objects
             const photos = await Promise.all(dogsPhotos);
 
-            // Map the dog data with the corresponding photo, joining the two arrays
+            // Map the dog data with the corresponding photo, joining the two arrays (photos and dogsData)
             dogs.value = dogsData.map((dog, index) => ({
               ...dog,
               photo: photos[index].message
