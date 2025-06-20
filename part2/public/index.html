@@ -118,7 +118,7 @@
             // Wait for all photo fetches to complete
             const photos = await Promise.all(dogsPhotos);
 
-            // Map the dog data with the corresponding photo
+            // Map the dog data with the corresponding photo, joining the two arrays
             dogs.value = dogsData.map((dog, index) => ({
               ...dog,
               photo: photos[index].message
