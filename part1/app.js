@@ -114,11 +114,11 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 ((SELECT dog_id FROM Dogs WHERE name = 'Levi'), '2025-09-11 12:30:00', 300, 'Africa', 'cancelled');
     `);
 
-// Route to return books as JSON
+// Route to return users as JSON
 app.get('/', async (req, res) => {
   try {
-    const [books] = await db.execute('SELECT * FROM books');
-    res.json(books);
+    const [users] = await db.execute('SELECT * FROM users');
+    res.json(users);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
   }
