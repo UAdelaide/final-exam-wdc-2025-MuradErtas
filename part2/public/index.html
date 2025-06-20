@@ -15,7 +15,7 @@
     <h1 class="text-primary">Welcome to the Dog Walking Service!</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <h2 class="mb-4">Dog Walking Login</h2>
-    <!-- form for user information submission, linked to the backend through v-models-->
+    <!-- form for user information submission, linked to the backend through v-models -->
     <form @submit.prevent="login" style="max-width: 400px;">
       <div class="mb-3">
         <label class="form-label">Username</label>
@@ -26,6 +26,7 @@
         <input v-model="password" type="password" class="form-control" id="password" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
+      <!-- if an error occurs, show to user -->
       <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
     </form>
   </div>
