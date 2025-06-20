@@ -105,14 +105,18 @@ let db;
       ('carol123','carol@example.com''hashed789','owner'),
       ('frankwalker','frank@example.com','hashed100','walker'),
       ('eve123','eve@example.com','hashed101','owner');
+      `);
 
+    await db.execute(`
       INSERT INTO Dogs (owner_id, name, size) VALUES
       ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
       ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
       ((SELECT user_id FROM Users WHERE username = 'eve123'), 'Charlie', 'medium'),
       ((SELECT user_id FROM Users WHERE username = 'eve123'), 'Lucy', 'small'),
       ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Levi', 'large');
+     `);
 
+    await db.execute(`
       INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
       ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
       ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
