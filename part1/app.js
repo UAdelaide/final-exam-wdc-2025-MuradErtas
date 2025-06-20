@@ -31,6 +31,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
+      database: 'DogWalkService', // Use the DogWalkService database
       multipleStatements: true
     });
 
