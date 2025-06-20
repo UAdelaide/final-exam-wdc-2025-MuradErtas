@@ -74,6 +74,27 @@
           }
         }
 
+        // Logout functionality
+        async function logout() {
+          try {
+            // Sends a POST request to the logout endpoint
+            const res = await fetch('/api/users/logout', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' }
+            });
+
+            // If the response is ok, redirect to the login page
+            if (res.ok) {
+              window.location.href = 'index.html';
+            } else {
+              const result = await res.json();
+              throw new Error(result.error || 'Logout failed');
+            }
+          } catch (err) {
+            error.value = err.message;
+          }
+        }
+
         onMounted(() => {
           loadWalkRequests();
         });
