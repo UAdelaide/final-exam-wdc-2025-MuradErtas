@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const mysql = require('mysql2/promise');
 
 // GET /api/dogs
 router.get('/dogs', async (req, res) => {
