@@ -99,7 +99,7 @@ let db;
     `);
 
     // Insert initial data if tables are empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
     if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO Users (user_id, username, email, password_hash, role) VALUES
@@ -127,6 +127,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Lucy'), '2025-09-10 21:30:00', 20, 'Windy Point', 'completed'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Levi'), '2025-09-11 12:30:00', 300, 'Africa', 'cancelled');
       `);
+    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
