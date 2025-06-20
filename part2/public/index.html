@@ -76,7 +76,12 @@
         // Fetch list of dogs and populate the table, with photos!
         async function LoadDogs() {
           try {
-            const dogsRes = await
+            const dogsRes = await fetch('/api/dogs');
+            if (!dogsRes.ok) throw new Error('Failed to load dogs');
+
+            const dogsData = await dogsRes.json();
+
+            
           }
         }
 
