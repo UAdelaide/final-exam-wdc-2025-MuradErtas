@@ -31,10 +31,10 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalkService', // Use the DogWalkService database
+      database: 'DogWalkService' // Use the DogWalkService database
     });
 
-    // Create a table if it doesn't exist
+    // Creating tables and inserting initial data
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Users (
           user_id INT AUTO_INCREMENT PRIMARY KEY,
