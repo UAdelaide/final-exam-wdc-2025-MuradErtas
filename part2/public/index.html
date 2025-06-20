@@ -47,7 +47,7 @@
               body: JSON.stringify({ username: username.value, password: password.value })
             });
             const result = await res.json();
-            if (!res.ok) throw new Error(result.message || 'Login failed');
+            if (!res.ok) throw new Error(result.error || 'Login failed');
             // Handle successful login, e.g., redirect to dashboard
             if (result.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
