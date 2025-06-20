@@ -37,7 +37,10 @@
         const error = ref('');
 
         async function login () {
-          
+          error.value = '';
+          try {
+            const res = await fetch()
+          }
         };
 
         return { email, password, login };
