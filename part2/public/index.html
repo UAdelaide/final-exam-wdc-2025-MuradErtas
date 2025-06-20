@@ -118,12 +118,14 @@
             // Wait for all photo fetches to complete
             const photos = await Promise.all(dogsPhotos);
 
-            
+            // Map the dog data with the corresponding photo
             dogs.value = dogsData.map((dog, index) => ({
               ...dog,
               photo: photos[index].message
             }));
+
           } catch (err) {
+            // Handle errors during the fetching of dogs
             error.value = err.message || 'Error loading dogs';
             console.error('Load dogs error:', error.value);
           }
