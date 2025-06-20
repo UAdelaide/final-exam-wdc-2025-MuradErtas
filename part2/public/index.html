@@ -45,10 +45,10 @@
         <tbody>
           <!-- Loop through the dogs array and display each dog's information -->
           <tr v-for="dog in dogs" :key="dog.dog_id">
-            <td>{{ dog.name }}</td>
+            <td>{{ dog.dog_id }}</td>
             <td>{{ dog.breed }}</td>
             <td>{{ dog.age }} years</td>
-            <td><img :src="dog.photo" alt="Dog Photo" class="img-thumbnail" style="width: 100px;"></td>
+            <td><img :src="dog.photo" alt="Dog Photo" style="width: 100px;"></td>
           </tr>
         </tbody>
       </table>
