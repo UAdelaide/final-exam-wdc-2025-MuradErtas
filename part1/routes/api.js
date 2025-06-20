@@ -38,7 +38,7 @@ router.get('/walkrequests/open', async (req, res) => {
 router.get('/walkers/summary', async (req, res) => {
     try {
         const [rows] = await db.query(`
-
+            
         `);
         res.json(rows);
     } catch (err) {
