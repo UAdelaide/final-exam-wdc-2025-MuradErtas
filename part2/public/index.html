@@ -62,12 +62,13 @@
             } else {
               error.value = 'Invalid user role';
             }
-            
           } catch (err) {
+            // Handle errors during the login process
             error.value = err.message || 'An error occurred';
             console.error('Login error:', error.value);
           }
         }
+        // 
         return { username, password, error, login };
       }
     }).mount('#app');
