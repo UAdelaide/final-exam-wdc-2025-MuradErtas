@@ -98,6 +98,9 @@ let db;
       );
     `);
 
+    // Insert initial data if tables are empty
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
+    if (rows[0].count === 0) {
     await db.execute(`
       INSERT INTO Users (user_id, username, email, password_hash, role) VALUES
       (1, 'alice123', 'alice@example.com', 'hashed123', 'owner'),
