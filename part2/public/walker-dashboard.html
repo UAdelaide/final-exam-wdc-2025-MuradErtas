@@ -98,7 +98,17 @@
         }
 
         // Fucntion to load user ID
-        
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/current');
+            if (!res.ok) throw new Error('Failed to load user data');
+            const userData = await res.json();
+            return userData.id;
+          } catch (err) {
+            error.value = err.message;
+            return null;
+          }
+        }
 
         onMounted(() => {
           loadWalkRequests();
@@ -109,7 +119,8 @@
           message,
           error,
           applyToWalk,
-          logout
+          logout,
+          getCurrentUser
         };
       }
     }).mount('#app');
