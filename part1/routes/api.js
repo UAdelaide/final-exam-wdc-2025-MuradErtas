@@ -48,8 +48,7 @@ router.get('/walkers/summary', async (req, res) => {
             AND WalkRequests.request_id = WalkRatings.request_id
             WHERE Users.role = 'walker'
             GROUP BY Users.user_id
-
-        `);
+            `);
         res.json(rows);
     } catch (err) {
         console.error('Error fetching walker summary:', err);
